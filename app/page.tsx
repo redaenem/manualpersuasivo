@@ -29,11 +29,14 @@ const RedText = ({ children, className = "" }: { children: React.ReactNode, clas
   </span>
 );
 
-const RedButtonCTA = ({ text, className = "" }: { text: string, className?: string }) => (
-  <button className={`relative overflow-hidden group bg-[#FF2B2B] text-[#FFFFFF] px-8 sm:px-12 py-4 sm:py-5 rounded-lg font-bold tracking-widest uppercase text-sm transition-all duration-500 shadow-[0_10px_30px_rgba(255,43,43,0.3)] hover:shadow-[0_15px_40px_rgba(255,43,43,0.5)] hover:-translate-y-1 active:scale-95 ${className}`}>
+const RedButtonCTA = ({ text, className = "", href = "https://pay.wiapy.com/f8cibSpxjL" }: { text: string, className?: string, href?: string }) => (
+  <a 
+    href={href}
+    className={`relative inline-block overflow-hidden group bg-[#FF2B2B] text-[#FFFFFF] px-8 sm:px-12 py-4 sm:py-5 rounded-lg font-bold tracking-widest uppercase text-sm transition-all duration-500 shadow-[0_10px_30px_rgba(255,43,43,0.3)] hover:shadow-[0_15px_40px_rgba(255,43,43,0.5)] hover:-translate-y-1 active:scale-95 text-center ${className}`}
+  >
     <span className="relative z-10">{text}</span>
     <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
-  </button>
+  </a>
 );
 
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
@@ -115,7 +118,7 @@ function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.6} className="flex flex-col sm:flex-row items-center gap-10 justify-center lg:justify-start">
-              <RedButtonCTA text="Liberar Acesso Imediato" className="shadow-[0_20px_50px_rgba(255,43,43,0.3)]" />
+              <RedButtonCTA text="LIBERAR MEU ACESSO IMEDIATO" className="shadow-[0_20px_50px_rgba(255,43,43,0.3)]" />
               
               <div className="flex flex-col gap-4 text-xs tracking-widest text-[#B8B8B8] font-bold">
                 <div className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#FF2B2B]"/> ACESSO IMEDIATO</div>
@@ -411,7 +414,7 @@ function Collection() {
         </div>
         
         <FadeIn delay={0.3} className="mt-24 md:mt-32 text-center">
-          <RedButtonCTA text="Liberar Coleção Completa" className="md:px-16 md:py-7 md:text-base scale-110" />
+          <RedButtonCTA text="LIBERAR MEU ACESSO IMEDIATO" className="md:px-16 md:py-7 md:text-base scale-110" />
         </FadeIn>
 
       </div>
@@ -454,9 +457,9 @@ function Pricing({ isFinal = false }: { isFinal?: boolean }) {
                 </li>
               </ul>
             </div>
-            <button className="w-full mt-auto py-6 border border-white/20 text-[#FFFFFF] rounded-2xl hover:bg-white/5 hover:border-white/40 transition-all duration-500 uppercase tracking-[0.3em] text-[12px] font-black">
-              Acessar
-            </button>
+            <a href="https://pay.wiapy.com/-y8krRsN8t" className="w-full mt-auto py-6 border border-white/20 text-[#FFFFFF] rounded-2xl hover:bg-white/5 hover:border-white/40 transition-all duration-500 uppercase tracking-[0.3em] text-[12px] font-black text-center">
+              LIBERAR MEU ACESSO IMEDIATO
+            </a>
           </FadeIn>
 
           {/* PLANO 3 - THE PREMIUM ONE */}
@@ -487,9 +490,9 @@ function Pricing({ isFinal = false }: { isFinal?: boolean }) {
                 </ul>
               </div>
 
-              <button className="w-full mt-auto py-7 bg-[#FF2B2B] text-[#FFFFFF] rounded-2xl hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(255,43,43,0.45)] transition-all duration-700 uppercase tracking-[0.3em] text-[14px] font-black shadow-lg">
-                Desbloquear Coleção
-              </button>
+              <a href="https://pay.wiapy.com/f8cibSpxjL" className="w-full mt-auto py-7 bg-[#FF2B2B] text-[#FFFFFF] rounded-2xl hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(255,43,43,0.45)] transition-all duration-700 uppercase tracking-[0.3em] text-[14px] font-black shadow-lg text-center">
+                LIBERAR MEU ACESSO IMEDIATO
+              </a>
             </div>
           </FadeIn>
 
@@ -514,9 +517,9 @@ function Pricing({ isFinal = false }: { isFinal?: boolean }) {
                   ))}
                 </ul>
             </div>
-            <button className="w-full mt-auto py-6 border border-[#FF2B2B]/40 text-[#FF2B2B] rounded-2xl hover:bg-[#FF2B2B]/10 transition-all duration-500 uppercase tracking-[0.3em] text-[12px] font-black">
-              Desbloquear Agora
-            </button>
+            <a href="https://pay.wiapy.com/ekL00qUKO2" className="w-full mt-auto py-6 border border-[#FF2B2B]/40 text-[#FF2B2B] rounded-2xl hover:bg-[#FF2B2B]/10 transition-all duration-500 uppercase tracking-[0.3em] text-[12px] font-black text-center">
+              LIBERAR MEU ACESSO IMEDIATO
+            </a>
           </FadeIn>
 
         </div>
@@ -654,7 +657,7 @@ function FinalCTA() {
           <p className="text-[#B8B8B8] mb-16 font-light text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed group hover:text-[#FFFFFF] transition-colors">
             A decisão sobre de qual lado você quer estar é, e sempre será, sua.
           </p>
-          <RedButtonCTA text="DESBLOQUEAR ACERVO COMPLETO" className="px-16 py-8 text-base shadow-[0_30px_70px_rgba(255,43,43,0.45)] hover:scale-105" />
+          <RedButtonCTA text="LIBERAR MEU ACESSO IMEDIATO" className="px-16 py-8 text-base shadow-[0_30px_70px_rgba(255,43,43,0.45)] hover:scale-105" />
         </FadeIn>
       </div>
     </section>
