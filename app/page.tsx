@@ -80,27 +80,27 @@ function Hero() {
         <div className="absolute bottom-0 right-0 w-[50%] h-[50%] bg-[#FF2B2B]/5 blur-[150px] rounded-full pointer-events-none" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 max-w-7xl">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
+      <div className="container relative z-10 mx-auto px-6 max-w-5xl text-center">
+        <div className="flex flex-col items-center">
           
-          {/* Left Text */}
-          <div className="flex-1 text-center lg:text-left">
+          {/* Main Text Content */}
+          <div className="w-full">
             <FadeIn>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#151515] border border-white/10 rounded-full mb-8 backdrop-blur-md shadow-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#151515] border border-white/10 rounded-full mb-8 backdrop-blur-md shadow-sm mx-auto">
                 <Eye className="w-4 h-4 text-[#B8B8B8]" />
                 <span className="text-xs tracking-[0.2em] text-[#B8B8B8] uppercase font-bold text-white/80">Acesso Restrito</span>
               </div>
             </FadeIn>
             
             <FadeIn delay={0.2}>
-              <h1 className="font-serif text-[2.75rem] md:text-7xl lg:text-[5rem] leading-[1.05] text-[#FFFFFF] mb-8 relative tracking-tight">
-                O mundo muda quando você <br className="hidden lg:block"/>
+              <h1 className="font-serif text-[3.5rem] md:text-8xl lg:text-[7rem] leading-[1.05] text-[#FFFFFF] mb-12 relative tracking-tight">
+                O mundo muda quando você <br className="hidden md:block"/>
                 <RedText>entende as pessoas.</RedText>
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.3}>
-              <div className="relative w-full max-w-[280px] sm:max-w-xs mx-auto lg:mx-0 mb-10 rounded-2xl overflow-hidden border border-[#FF2B2B]/30 shadow-[0_30px_70px_rgba(255,43,43,0.15)] aspect-[9/16] transition-transform hover:scale-[1.02] duration-500">
+              <div className="relative w-full max-w-[280px] sm:max-w-xs mx-auto mb-12 rounded-2xl overflow-hidden border border-[#FF2B2B]/30 shadow-[0_30px_70px_rgba(255,43,43,0.15)] aspect-[9/16] transition-transform hover:scale-[1.02] duration-500">
                 <iframe 
                   src="https://player.vimeo.com/video/1190634149?h=9b58d0d63f&badge=0&autopause=0&player_id=0&app_id=58479" 
                   frameBorder="0" 
@@ -112,44 +112,17 @@ function Hero() {
             </FadeIn>
 
             <FadeIn delay={0.4}>
-              <p className="text-lg md:text-2xl text-[#EAEAEA] mb-12 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+              <p className="text-xl md:text-3xl text-[#EAEAEA] mb-16 max-w-3xl mx-auto font-light leading-relaxed">
                 A diferença entre quem é influenciado e quem entende o jogo. Tenha acesso às leituras mais comentadas sobre persuasão, comportamento humano e poder estratégico.
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.6} className="flex flex-col sm:flex-row items-center gap-10 justify-center lg:justify-start">
-              <RedButtonCTA text="LIBERAR MEU ACESSO IMEDIATO" className="shadow-[0_20px_50px_rgba(255,43,43,0.3)]" />
+            <FadeIn delay={0.6} className="flex flex-col sm:flex-row items-center gap-10 justify-center">
+              <RedButtonCTA href="#ofertas" text="LIBERAR MEU ACESSO IMEDIATO" className="shadow-[0_20px_50px_rgba(255,43,43,0.3)]" />
               
-              <div className="flex flex-col gap-4 text-xs tracking-widest text-[#B8B8B8] font-bold">
+              <div className="flex flex-col gap-4 text-xs tracking-widest text-[#B8B8B8] font-bold text-left">
                 <div className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-[#FF2B2B]"/> ACESSO IMEDIATO</div>
                 <div className="flex items-center gap-3"><Smartphone className="w-5 h-5 text-[#FF2B2B]"/> LEITURA OTIMIZADA</div>
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* Right Mockup */}
-          <div className="flex-1 w-full max-w-lg lg:max-w-none relative">
-            <FadeIn delay={0.8} className="relative w-full aspect-square flex items-center justify-center">
-              <div className="absolute w-[60%] lg:w-[50%] h-[80%] left-[10%] bg-[#101010] border border-white/10 rounded-[2.5rem] p-4 shadow-2xl z-0 transform -rotate-6 hidden sm:block opacity-60 lg:translate-x-8">
-                <div className="w-full h-full bg-[#050505] rounded-[2rem] overflow-hidden border border-white/5 flex flex-col p-6 relative">
-                  <div className="w-full h-40 bg-gradient-to-br from-[#FF2B2B]/10 to-transparent rounded-xl mb-6 border border-white/5" />
-                  <div className="w-3/4 h-3 bg-white/5 rounded-full mb-5" />
-                  <div className="w-1/2 h-3 bg-white/5 rounded-full mb-5" />
-                </div>
-              </div>
-
-              <div className="absolute w-[65%] lg:w-[57%] right-[10%] sm:right-[5%] z-10 transform sm:translate-y-8 transition-all hover:-translate-y-4 lg:translate-x-4 duration-700">
-                <div className="relative w-full aspect-[3.2/4] bg-gradient-to-br from-[#151515] to-[#050505] border border-white/20 shadow-[0_40px_80px_rgba(0,0,0,0.8)] rounded-r-2xl border-l-[18px] border-l-[#0D0F13] flex flex-col items-center justify-center p-8 lg:p-10 backdrop-blur-md group">
-                   <div className="absolute inset-0 bg-white/[0.03] mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                   <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#FF2B2B]/40 to-transparent" />
-                   <div className="mb-10 relative">
-                     <div className="absolute inset-0 bg-[#FF2B2B] blur-2xl opacity-20 group-hover:opacity-40 transition-opacity" />
-                     <Crown className="w-16 h-16 lg:w-20 lg:h-20 text-[#FF2B2B] relative z-10 stroke-[1.5] drop-shadow-[0_0_15px_rgba(255,43,43,0.3)]" />
-                   </div>
-                   <h3 className="font-serif text-3xl lg:text-5xl text-center text-[#FFFFFF] mb-6 leading-tight drop-shadow-md">As 48 Leis<br/>do Poder</h3>
-                   <div className="w-16 h-[2px] bg-[#FF2B2B] mb-6 group-hover:w-24 transition-all duration-700" />
-                   <p className="text-[#FF2B2B] tracking-[0.3em] text-[10px] lg:text-[12px] uppercase text-center font-black">Conhecimento Vital</p>
-                </div>
               </div>
             </FadeIn>
           </div>
@@ -189,12 +162,12 @@ function PainBlock() {
 
 function CuriosityBlock() {
   const points = [
-    { icon: <Target />, title: "Estratégia Social", desc: "A arquitetura invisível das relações. O que você não vê dita os resultados." },
-    { icon: <Shield />, title: "Persuasão Oculta", desc: "A arte de comunicar às entrelinhas. Moldar decisões sem forçar argumentos." },
-    { icon: <Brain />, title: "Inteligência Emocional", desc: "A fundação inabalável de toda mente estratégica sob pressão." },
-    { icon: <Eye />, title: "Comportamento Humano", desc: "Decifrar intenções irreais antes mesmo que sejam reveladas." },
-    { icon: <Users />, title: "Padrões Sociais", desc: "Compreender os ciclos previsíveis pelos quais as massas operam." },
-    { icon: <Crown />, title: "Mentalidade de Elite", desc: "Como mentes raras processam a realidade e criam vantagens absolutas." },
+    { icon: Target, title: "Estratégia Social", desc: "A arquitetura invisível das relações. O que você não vê dita os resultados." },
+    { icon: Shield, title: "Persuasão Oculta", desc: "A arte de comunicar às entrelinhas. Moldar decisões sem forçar argumentos." },
+    { icon: Brain, title: "Inteligência Emocional", desc: "A fundação inabalável de toda mente estratégica sob pressão." },
+    { icon: Eye, title: "Comportamento Humano", desc: "Decifrar intenções irreais antes mesmo que sejam reveladas." },
+    { icon: Users, title: "Padrões Sociais", desc: "Compreender os ciclos previsíveis pelos quais as massas operam." },
+    { icon: Crown, title: "Mentalidade de Elite", desc: "Como mentes raras processam a realidade e criam vantagens absolutas." },
   ];
 
   return (
@@ -213,7 +186,7 @@ function CuriosityBlock() {
               <div className="group h-full bg-[#151515] border border-white/10 hover:border-[#FF2B2B]/40 p-10 md:p-12 rounded-3xl transition-all duration-700 relative overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(255,43,43,0.1)]">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-[#FF2B2B]/5 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2 group-hover:bg-[#FF2B2B]/15 transition-colors duration-700" />
                 <div className="w-16 h-16 mb-10 text-[#EAEAEA] group-hover:text-[#FF2B2B] transition-all duration-500 relative z-10 transform group-hover:scale-110">
-                  {React.cloneElement(p.icon as React.ReactElement<any>, { className: "stroke-[1.5] w-full h-full" })}
+                  <p.icon className="stroke-[1.5] w-full h-full" />
                 </div>
                 <h3 className="text-2xl font-serif text-[#FFFFFF] mb-5 relative z-10">{p.title}</h3>
                 <p className="text-[#B8B8B8] text-lg leading-relaxed relative z-10 font-light group-hover:text-[#EAEAEA] transition-colors">{p.desc}</p>
@@ -414,7 +387,7 @@ function Collection() {
         </div>
         
         <FadeIn delay={0.3} className="mt-24 md:mt-32 text-center">
-          <RedButtonCTA text="LIBERAR MEU ACESSO IMEDIATO" className="md:px-16 md:py-7 md:text-base scale-110" />
+          <RedButtonCTA href="#ofertas" text="LIBERAR MEU ACESSO IMEDIATO" className="md:px-16 md:py-7 md:text-base scale-110" />
         </FadeIn>
 
       </div>
@@ -424,7 +397,7 @@ function Collection() {
 
 function Pricing({ isFinal = false }: { isFinal?: boolean }) {
   return (
-    <section className="py-32 md:py-48 bg-[#050505] relative overflow-hidden">
+    <section id="ofertas" className="py-32 md:py-48 bg-[#050505] relative overflow-hidden">
       {/* Background Lighting */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-[#FF2B2B]/5 to-transparent blur-[120px] pointer-events-none" />
       
@@ -562,9 +535,9 @@ function IdentityBlock() {
 
 function Guarantee() {
   const items = [
-    { icon: <Lock />, title: "Ambiente Seguro", desc: "Criptografia de ponta a ponta. Seus dados invisíveis e protegidos." },
-    { icon: <Zap />, title: "Acesso Instantâneo", desc: "Acesso liberado no segundo em que a transação é confirmada." },
-    { icon: <Smartphone />, title: "Leitura Adaptativa", desc: "Formatado milimetricamente para qualquer tela ou dispositivo." }
+    { icon: Lock, title: "Ambiente Seguro", desc: "Criptografia de ponta a ponta. Seus dados invisíveis e protegidos." },
+    { icon: Zap, title: "Acesso Instantâneo", desc: "Acesso liberado no segundo em que a transação é confirmada." },
+    { icon: Smartphone, title: "Leitura Adaptativa", desc: "Formatado milimetricamente para qualquer tela ou dispositivo." }
   ];
 
   return (
@@ -575,7 +548,7 @@ function Guarantee() {
              <FadeIn key={i} delay={i * 0.1} className="group flex flex-col text-center md:text-left items-center md:items-start p-12 border border-white/10 bg-[#101010] rounded-[2rem] hover:border-[#FF2B2B]/30 transition-all duration-700 shadow-xl relative overflow-hidden">
                <div className="absolute inset-0 bg-gradient-to-br from-[#FF2B2B]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                <div className="mb-10 w-16 h-16 bg-[#050505] border border-white/10 rounded-2xl flex items-center justify-center text-[#FF2B2B] shadow-inner group-hover:scale-110 transition-transform duration-500 relative z-10">
-                 {React.cloneElement(it.icon as React.ReactElement<any>, { className: "w-7 h-7 stroke-[1.5]" })}
+                 <it.icon className="w-7 h-7 stroke-[1.5]" />
                </div>
                <h4 className="text-[#FFFFFF] font-black mb-5 text-[15px] tracking-[0.2em] uppercase relative z-10">{it.title}</h4>
                <p className="text-[#B8B8B8] font-light leading-relaxed text-lg relative z-10 group-hover:text-[#EAEAEA] transition-colors">{it.desc}</p>
@@ -657,7 +630,7 @@ function FinalCTA() {
           <p className="text-[#B8B8B8] mb-16 font-light text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed group hover:text-[#FFFFFF] transition-colors">
             A decisão sobre de qual lado você quer estar é, e sempre será, sua.
           </p>
-          <RedButtonCTA text="LIBERAR MEU ACESSO IMEDIATO" className="px-16 py-8 text-base shadow-[0_30px_70px_rgba(255,43,43,0.45)] hover:scale-105" />
+          <RedButtonCTA href="#ofertas" text="LIBERAR MEU ACESSO IMEDIATO" className="px-16 py-8 text-base shadow-[0_30px_70px_rgba(255,43,43,0.45)] hover:scale-105" />
         </FadeIn>
       </div>
     </section>
