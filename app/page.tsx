@@ -102,7 +102,7 @@ function Hero() {
             <FadeIn delay={0.3}>
               <div className="relative w-full max-w-[280px] sm:max-w-xs mx-auto mb-12 rounded-2xl overflow-hidden border border-[#FF2B2B]/30 shadow-[0_30px_70px_rgba(255,43,43,0.15)] aspect-[9/16] transition-transform hover:scale-[1.02] duration-500">
                 <iframe 
-                  src="https://player.vimeo.com/video/1190634149?h=9b58d0d63f&badge=0&autopause=0&player_id=0&app_id=58479" 
+                  src="https://player.vimeo.com/video/1191305513" 
                   frameBorder="0" 
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
                   className="absolute top-0 left-0 w-full h-full"
