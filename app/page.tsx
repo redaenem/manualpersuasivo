@@ -20,15 +20,24 @@ const RedText = ({ children, className = "" }: { children: React.ReactNode, clas
   </span>
 );
 
-const RedButtonCTA = ({ text, className = "", href = "https://pay.wiapy.com/f8cibSpxjL" }: { text: string, className?: string, href?: string }) => (
-  <a 
-    href={href}
-    className={`relative inline-block overflow-hidden group bg-[#FF2B2B] text-[#FFFFFF] px-8 sm:px-12 py-4 sm:py-5 rounded-lg font-bold tracking-widest uppercase text-sm transition-all duration-500 shadow-[0_10px_30px_rgba(255,43,43,0.3)] hover:shadow-[0_15px_40px_rgba(255,43,43,0.5)] hover:-translate-y-1 active:scale-95 text-center ${className}`}
-  >
-    <span className="relative z-10">{text}</span>
-    <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
-  </a>
-);
+const RedButtonCTA = ({ text, className = "", href = "https://pay.wiapy.com/f8cibSpxjL" }: { text: string, className?: string, href?: string }) => {
+  const handleClick = () => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout');
+    }
+  };
+
+  return (
+    <a 
+      href={href}
+      onClick={handleClick}
+      className={`relative inline-block overflow-hidden group bg-[#FF2B2B] text-[#FFFFFF] px-8 sm:px-12 py-4 sm:py-5 rounded-lg font-bold tracking-widest uppercase text-sm transition-all duration-500 shadow-[0_10px_30px_rgba(255,43,43,0.3)] hover:shadow-[0_15px_40px_rgba(255,43,43,0.5)] hover:-translate-y-1 active:scale-95 text-center ${className}`}
+    >
+      <span className="relative z-10">{text}</span>
+      <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
+    </a>
+  );
+};
 
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
   <motion.div
@@ -392,6 +401,12 @@ function Footer() {
 }
 
 export default function LandingPage() {
+  React.useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'ViewContent');
+    }
+  }, []);
+
   return (
     <main className="w-full bg-[#000000] min-h-screen overflow-hidden font-sans text-[#B8B8B8] selection:bg-[#FF2B2B]/30 flex flex-col justify-stretch items-stretch">
       <Hero />
