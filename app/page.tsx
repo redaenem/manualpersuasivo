@@ -10,8 +10,7 @@ import {
   Eye,
   ChevronDown
 } from 'lucide-react';
-import React, { useEffect } from 'react';
-import * as fpixel from '../lib/fpixel';
+import React from 'react';
 
 // --- ATOMIC COMPONENTS ---
 
@@ -21,12 +20,9 @@ const RedText = ({ children, className = "" }: { children: React.ReactNode, clas
   </span>
 );
 
-const RedButtonCTA = ({ text, className = "", href = "https://pay.wiapy.com/f8cibSpxjL", onClick }: { text: string, className?: string, href?: string, onClick?: () => void }) => (
+const RedButtonCTA = ({ text, className = "", href = "https://pay.wiapy.com/f8cibSpxjL" }: { text: string, className?: string, href?: string }) => (
   <a 
     href={href}
-    onClick={(e) => {
-      if (onClick) onClick();
-    }}
     className={`relative inline-block overflow-hidden group bg-[#FF2B2B] text-[#FFFFFF] px-8 sm:px-12 py-4 sm:py-5 rounded-lg font-bold tracking-widest uppercase text-sm transition-all duration-500 shadow-[0_10px_30px_rgba(255,43,43,0.3)] hover:shadow-[0_15px_40px_rgba(255,43,43,0.5)] hover:-translate-y-1 active:scale-95 text-center ${className}`}
   >
     <span className="relative z-10">{text}</span>
@@ -48,7 +44,7 @@ const FadeIn = ({ children, delay = 0, className = "" }: { children: React.React
 
 // --- SECTIONS ---
 
-function Hero({ handleInitiateCheckout }: { handleInitiateCheckout: () => void }) {
+function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-16 overflow-hidden">
       <div className="absolute inset-0 bg-[#000000] z-0">
@@ -95,7 +91,7 @@ function Hero({ handleInitiateCheckout }: { handleInitiateCheckout: () => void }
               </FadeIn>
 
               <FadeIn delay={0.5} className="flex flex-col gap-6">
-                <RedButtonCTA onClick={handleInitiateCheckout} href="#ofertas" text="DESBLOQUEAR ACESSO" className="w-full md:w-auto py-6 text-base" />
+                <RedButtonCTA href="#ofertas" text="DESBLOQUEAR ACESSO" className="w-full md:w-auto py-6 text-base" />
                 <div className="flex items-center gap-6 justify-center md:justify-start text-[10px] tracking-[0.2em] text-[#B8B8B8] font-bold">
                    <div className="flex items-center gap-2"><Lock className="w-4 h-4 text-[#FF2B2B]"/> 100% SEGURO</div>
                    <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-[#FF2B2B]"/> ACESSO IMEDIATO</div>
@@ -214,7 +210,7 @@ function BookCarousel() {
   );
 }
 
-function Pricing({ handleInitiateCheckout }: { handleInitiateCheckout: () => void }) {
+function Pricing() {
   return (
     <section id="ofertas" className="py-24 md:py-32 bg-[#050505] relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-[#FF2B2B]/10 to-transparent blur-[120px] pointer-events-none" />
@@ -245,11 +241,7 @@ function Pricing({ handleInitiateCheckout }: { handleInitiateCheckout: () => voi
                 </li>
               </ul>
             </div>
-            <a 
-              onClick={() => handleInitiateCheckout()} 
-              href="https://pay.wiapy.com/-y8krRsN8t" 
-              className="w-full mt-auto py-5 border border-white/20 text-[#FFFFFF] rounded-xl hover:bg-white/5 transition-all text-center uppercase tracking-[0.2em] text-[11px] font-black"
-            >
+            <a href="https://pay.wiapy.com/-y8krRsN8t" className="w-full mt-auto py-5 border border-white/20 text-[#FFFFFF] rounded-xl hover:bg-white/5 transition-all text-center uppercase tracking-[0.2em] text-[11px] font-black">
               LIBERAR AGORA
             </a>
           </FadeIn>
@@ -282,11 +274,7 @@ function Pricing({ handleInitiateCheckout }: { handleInitiateCheckout: () => voi
                 </ul>
               </div>
 
-              <a 
-                onClick={() => handleInitiateCheckout()} 
-                href="https://pay.wiapy.com/f8cibSpxjL" 
-                className="w-full mt-auto py-6 bg-[#FF2B2B] text-[#FFFFFF] rounded-xl hover:scale-105 hover:shadow-[0_20px_40px_rgba(255,43,43,0.4)] transition-all uppercase tracking-[0.2em] text-[13px] font-black text-center shadow-lg"
-              >
+              <a href="https://pay.wiapy.com/f8cibSpxjL" className="w-full mt-auto py-6 bg-[#FF2B2B] text-[#FFFFFF] rounded-xl hover:scale-105 hover:shadow-[0_20px_40px_rgba(255,43,43,0.4)] transition-all uppercase tracking-[0.2em] text-[13px] font-black text-center shadow-lg">
                 DESBLOQUEAR TUDO
               </a>
             </div>
@@ -309,11 +297,7 @@ function Pricing({ handleInitiateCheckout }: { handleInitiateCheckout: () => voi
                   ))}
                 </ul>
             </div>
-            <a 
-              onClick={() => handleInitiateCheckout()} 
-              href="https://pay.wiapy.com/ekL00qUKO2" 
-              className="w-full mt-auto py-5 border border-[#FF2B2B]/40 text-[#FF2B2B] rounded-xl hover:bg-[#FF2B2B]/10 transition-all text-center uppercase tracking-[0.2em] text-[11px] font-black"
-            >
+            <a href="https://pay.wiapy.com/ekL00qUKO2" className="w-full mt-auto py-5 border border-[#FF2B2B]/40 text-[#FF2B2B] rounded-xl hover:bg-[#FF2B2B]/10 transition-all text-center uppercase tracking-[0.2em] text-[11px] font-black">
               LIBERAR AGORA
             </a>
           </FadeIn>
@@ -365,7 +349,7 @@ function FAQ() {
   );
 }
 
-function FinalCTA({ handleInitiateCheckout }: { handleInitiateCheckout: () => void }) {
+function FinalCTA() {
   return (
     <section className="py-32 bg-[#000000] border-t border-white/5 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#FF2B2B]/5 via-transparent to-transparent pointer-events-none" />
@@ -377,7 +361,7 @@ function FinalCTA({ handleInitiateCheckout }: { handleInitiateCheckout: () => vo
           <p className="text-[#B8B8B8] mb-12 font-light text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             Enquanto alguns apenas reagem ao mundo… outros aprendem como ele funciona.
           </p>
-          <RedButtonCTA onClick={handleInitiateCheckout} href="#ofertas" text="ACESSAR O ACERVO AGORA" className="px-12 py-6 text-base" />
+          <RedButtonCTA href="#ofertas" text="ACESSAR O ACERVO AGORA" className="px-12 py-6 text-base" />
         </FadeIn>
       </div>
     </section>
@@ -408,22 +392,14 @@ function Footer() {
 }
 
 export default function LandingPage() {
-  useEffect(() => {
-    fpixel.event('ViewContent');
-  }, []);
-
-  const handleInitiateCheckout = () => {
-    fpixel.event('InitiateCheckout');
-  };
-
   return (
     <main className="w-full bg-[#000000] min-h-screen overflow-hidden font-sans text-[#B8B8B8] selection:bg-[#FF2B2B]/30 flex flex-col justify-stretch items-stretch">
-      <Hero handleInitiateCheckout={handleInitiateCheckout} />
+      <Hero />
       <Benefits />
       <BookCarousel />
-      <Pricing handleInitiateCheckout={handleInitiateCheckout} />
+      <Pricing />
       <FAQ />
-      <FinalCTA handleInitiateCheckout={handleInitiateCheckout} />
+      <FinalCTA />
       <Footer />
     </main>
   );
